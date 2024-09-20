@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 1000f;
     public int health = 100;
     public GameObject playerProjectilePrefab;
+    [SerializeField] GameObject playerBombPrefab;
     public float fireDelay = 0.5f;
 
     Rigidbody2D rigidBody;
@@ -35,6 +36,12 @@ public class PlayerController : MonoBehaviour
                 
                 timeToShoot = Time.time + fireDelay;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > timeToShoot)
+        {
+            Instantiate(playerBombPrefab, transform.position, Quaternion.identity);
+            timeToShoot = Time.time + fireDelay;
         }
     }
 
