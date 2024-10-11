@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3129202864751849186}
   - component: {fileID: 7229149133424156396}
   - component: {fileID: 369341281815600566}
-  - component: {fileID: 961734345968727869}
   - component: {fileID: 8753529382246328977}
+  - component: {fileID: 96501156170608545}
   m_Layer: 7
   m_Name: ShootingEnemy
   m_TagString: Untagged
@@ -187,20 +187,6 @@ PolygonCollider2D:
       - {x: 0.125, y: -0.19}
       - {x: 0.145, y: -0.16}
   m_UseDelaunayMesh: 0
---- !u!114 &961734345968727869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8430836346221129858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09ecfdc3180f4e94f814715abc2a516d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  randomHorizontalMovement: 1
 --- !u!114 &8753529382246328977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,3 +201,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   enemyBulletPrefab: {fileID: 6327980110675389163, guid: a59a6525f88e5354688ffbf33f638347, type: 3}
+--- !u!114 &96501156170608545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430836346221129858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a9ec4cab48162743ba737ebe41e1377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
