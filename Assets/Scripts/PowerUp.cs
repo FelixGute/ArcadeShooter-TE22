@@ -16,7 +16,7 @@ public class PowerUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.name);
-        collision.gameObject.GetComponent<PlayerController>().TempSpeedBoost(1000f);
+        collision.gameObject.GetComponent<PlayerMovement>().TempSpeedBoost(1000f);
         Destroy(gameObject);
     }
 }
