@@ -6,11 +6,13 @@ using UnityEngine.UIElements;
 public class CardUIManager : MonoBehaviour
 {
     [SerializeField] List<Card> availableCards;
+    VisualElement root;
     VisualElement cardContainer;
 
     private void Awake()
     {
-        cardContainer = GetComponent<UIDocument>().rootVisualElement.Q<VisualElement>("CardContainer");
+        root = GetComponent<UIDocument>().rootVisualElement;
+        cardContainer = root.Q<VisualElement>("CardContainer");
     }
 
     public void ShowCards()
@@ -51,8 +53,17 @@ public class CardUIManager : MonoBehaviour
         Button button = new Button();
         button.AddToClassList("card__button");
         button.text = "Choose";
+        // Registerar en callbackmetod som sedan kör OnCardSelected
+        // Använder Lambdauttryck för att "hoppa över" kravet av en specifik typ av metod
+        button.RegisterCallback<ClickEvent>(evnt => OnCardSelected(infoCard));
         card.Add(button);
 
         cardContainer.Add(card);
+    }
+
+    void OnCardSelected(Card card)
+    {
+        card.Selected();
+        cardContainer.Clear();
     }
 }
