@@ -4,6 +4,7 @@
     background-color: rgb(71, 85, 105);
     color: rgb(240, 244, 248);
     align-self: center;
+    width: 25%;
 }
 
 .card__heading {
@@ -19,6 +20,7 @@
 
 .card__description {
     font-size: 20px;
+    max-width: 90%;
 }
 
 .card__button {

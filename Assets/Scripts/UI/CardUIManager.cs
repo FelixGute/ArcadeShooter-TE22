@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class CardUIManager : MonoBehaviour
 {
+    [SerializeField] List<Card> availableCards;
     VisualElement cardContainer;
 
     private void Awake()
@@ -14,9 +15,10 @@ public class CardUIManager : MonoBehaviour
 
     public void ShowCards()
     {
-        CreateCard();
-        CreateCard();
-        CreateCard();
+        cardContainer.Clear();
+        CreateCard(availableCards[0]);
+        CreateCard(availableCards[1]);
+        CreateCard(availableCards[2]);
     }
 
     private void Update()
@@ -26,23 +28,24 @@ public class CardUIManager : MonoBehaviour
         }
     }
 
-    void CreateCard()
+    void CreateCard(Card infoCard)
     {
         VisualElement card = new VisualElement();
         card.AddToClassList("card");
 
         Label heading = new Label();
         heading.AddToClassList("card__heading");
-        heading.text = "";
+        heading.text = infoCard.cardName;
         card.Add(heading);
 
         VisualElement icon = new VisualElement();
         icon.AddToClassList("card__icon");
+        //icon.style.backgroundImage = infoCard.icon;
         card.Add(icon);
 
         Label description = new Label();
         description.AddToClassList("description");
-        description.text = "";
+        description.text = infoCard.description;
         card.Add(description);
 
         Button button = new Button();
